@@ -157,6 +157,7 @@ df.sort()
 # <codecell>
 
 import matplotlib.pyplot as plt
+import mpld3
 %matplotlib inline
 
 # <markdowncell>
@@ -196,61 +197,29 @@ plt.savefig('Einwohner-Scatter.png', dpi=150)
 
 # Wie wäre es mit einer interaktiven Grafik?
 
-# <markdowncell>
-
-# Dafür nutzen wir [Bokeh](http://bokeh.pydata.org/index.html)
-
 # <codecell>
 
-from bokeh.plotting import *
-from bokeh.resources import CDN
-from bokeh.embed import autoload_static
+fig, ax = plt.subplots(subplot_kw=dict(axisbg='#EEEEEE'))
+N = 100
 
-# <codecell>
+scatter = ax.scatter(df['Fläche in km²'],
+                     df['Einwohnerzahl'],
+                     alpha=0.8,
+                     s=100,
+                     c=df['Einwohnerzahl']/df['Fläche in km²'],
+                     cmap=plt.cm.jet)
+ax.grid(color='white', linestyle='solid')
 
+ax.set_title("Einwohnerdichte Dresdner Stadtteile", size=20)
+ax.set_xlabel(u'Fläche in km²')
+ax.set_ylabel(u'Einwohnerzahl')
 
-# <codecell>
+tooltip = mpld3.plugins.PointLabelTooltip(scatter, labels=df.index.tolist())
+mpld3.plugins.connect(fig, tooltip)
 
-# Create a set of tools to use
-TOOLS="pan,box_zoom,reset"
+mpld3.save_html(fig, 'Einwohner-Scatter.html')
 
-x= df['Fläche in km²']
-y= df['Einwohnerzahl']
-labels = df.index
-
-figure(title = "Einwohnerdichte der Dresdner Stadtteile im Vergleich",
-       x_axis_label = 'Fläche in km²',
-       y_axis_label = 'Einwohnerzahl',
-       tools=TOOLS,
-       plot_width=1000)
-
-hold()
-
-plot = circle(x, y, radius=1, fill_alpha=0.9, line_color=None, color='orange')
-plot = text(x, y, text=labels, alpha=0.5, text_font_size="12pt",
-     text_baseline="middle", text_align="center", angle=0)
-
-# see http://bokeh.pydata.org/docs/user_guide/embedding.html#static-data
-js, tag = autoload_static(plot, CDN, 'https://raw.githubusercontent.com/MechLabEngineering/DataVis-for-Journalists/master/Einwohner-Scatter.js')
-
-show()
-
-# <markdowncell>
-
-# So, nun haben wir ein JavaScript unter der Variable `js` und ein `tag`, was wir in jede beliebige Webseite einbetten können.
-
-# <codecell>
-
-print js
-
-# <codecell>
-
-with open("Einwohner-Scatter.js", "w") as text_file:
-    text_file.write(js)
-
-# <codecell>
-
-print tag
+mpld3.display()
 
 # <codecell>
 
