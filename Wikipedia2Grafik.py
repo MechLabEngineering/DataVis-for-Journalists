@@ -231,7 +231,7 @@ plot = text(x, y, text=labels, alpha=0.5, text_font_size="12pt",
      text_baseline="middle", text_align="center", angle=0)
 
 # see http://bokeh.pydata.org/docs/user_guide/embedding.html#static-data
-js, tag = autoload_static(plot, CDN, 'some/path')
+js, tag = autoload_static(plot, CDN, 'https://raw.githubusercontent.com/MechLabEngineering/DataVis-for-Journalists/master/Einwohner-Scatter.js')
 
 show()
 
@@ -251,6 +251,9 @@ with open("Einwohner-Scatter.js", "w") as text_file:
 # <codecell>
 
 print tag
+
+# <codecell>
+
 
 # <codecell>
 
