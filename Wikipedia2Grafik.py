@@ -203,6 +203,8 @@ plt.savefig('Einwohner-Scatter.png', dpi=150)
 # <codecell>
 
 from bokeh.plotting import *
+from bokeh.resources import CDN
+from bokeh.embed import autoload_static
 
 # <codecell>
 
@@ -211,7 +213,6 @@ from bokeh.plotting import *
 
 # Create a set of tools to use
 TOOLS="pan,box_zoom,reset"
-output_file("Einwohner-Scatter.html", title='Einwohnerdichte der Dresdner Stadtteile im Vergleich')
 
 x= df['Fläche in km²']
 y= df['Einwohnerzahl']
@@ -225,12 +226,31 @@ figure(title = "Einwohnerdichte der Dresdner Stadtteile im Vergleich",
 
 hold()
 
-circle(x, y, radius=1, fill_alpha=0.9, line_color=None, color='orange')
-text(x, y, text=labels, alpha=0.5, text_font_size="12pt",
+plot = circle(x, y, radius=1, fill_alpha=0.9, line_color=None, color='orange')
+plot = text(x, y, text=labels, alpha=0.5, text_font_size="12pt",
      text_baseline="middle", text_align="center", angle=0)
 
+# see http://bokeh.pydata.org/docs/user_guide/embedding.html#static-data
+js, tag = autoload_static(plot, CDN, 'some/path')
 
 show()
+
+# <markdowncell>
+
+# So, nun haben wir ein JavaScript unter der Variable `js` und ein `tag`, was wir in jede beliebige Webseite einbetten können.
+
+# <codecell>
+
+print js
+
+# <codecell>
+
+with open("Einwohner-Scatter.js", "w") as text_file:
+    text_file.write(js)
+
+# <codecell>
+
+print tag
 
 # <codecell>
 
