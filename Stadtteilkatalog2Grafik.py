@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # <nbformat>3.0</nbformat>
 
+# <markdowncell>
+
+# ![CodeWeek Logo](http://blog.slub-dresden.de/uploads/RTEmagicC_codeweek-slider.png.png)
+
 # <headingcell level=1>
 
 # Zusammenhänge aus Zahlen finden.
@@ -196,6 +200,17 @@ plt.savefig('Wohnungsleerstand.png', dpi=150)
 
 # <markdowncell>
 
+# Wir möchten eine Story zu PKW und Urbanisierung schreiben. Wir benötigen ein paar Informationen dazu.
+
+# <codecell>
+
+from IPython.display import HTML
+HTML('<iframe src=http://www.spiegel.de/auto/aktuell/liste-der-staedte-mit-der-groessten-autodichte-a-845878.html width=1000 height=650></iframe>')
+
+# <markdowncell>
+
+# OK. Die haben eine Studie. Wir holen uns die Daten selbst.
+# 
 # Quelle: http://www.dresden.de/de/02/06/auskunft/medien/DD_STadtteilkatalog-Dateien/sheet007.htm
 
 # <codecell>

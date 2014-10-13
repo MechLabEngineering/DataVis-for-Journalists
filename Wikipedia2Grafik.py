@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # <nbformat>3.0</nbformat>
 
+# <markdowncell>
+
+# ![CodeWeek Logo](http://blog.slub-dresden.de/uploads/RTEmagicC_codeweek-slider.png.png)
+
 # <headingcell level=1>
 
 # Zusammenhänge aus Zahlen finden.
@@ -157,6 +161,7 @@ df.sort()
 # <codecell>
 
 import matplotlib.pyplot as plt
+from matplotlib import image, patches, colors
 import mpld3
 %matplotlib inline
 
@@ -207,7 +212,7 @@ scatter = ax.scatter(df['Fläche in km²'],
                      alpha=0.8,
                      s=100,
                      c=df['Einwohnerzahl']/df['Fläche in km²'],
-                     cmap=plt.cm.jet)
+                     cmap=plt.cm.winter_r)
 ax.grid(color='white', linestyle='solid')
 
 ax.set_title("Einwohnerdichte Dresdner Stadtteile", size=20)
@@ -221,9 +226,7 @@ mpld3.save_html(fig, 'Einwohner-Scatter.html')
 
 mpld3.display()
 
-# <codecell>
+# <markdowncell>
 
-
-# <codecell>
-
+# ![](http://triadstrategies.typepad.com/.a/6a0120a6abf659970b0162fde3889c970d-pi)
 
