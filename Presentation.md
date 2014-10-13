@@ -75,7 +75,7 @@ und den Paketmanager PIP:
 
 --
 
-## Wie bekomme ich das auf meinem PC/Mac zum laufen?
+### Wie bekomme ich das auf meinem PC/Mac zum laufen?
 
 ![](http://www.troll.me/images/victory-baby/you-can-do-it-just-try.jpg)
 
@@ -85,7 +85,7 @@ und den Paketmanager PIP:
 
 `11110001001000000`
 
-Unter Daten versteht man im Allgemeinen Angaben, Werte oder formulierbare Befunde, die durch Messung, Beobachtung u. a. gewonnen wurden.
+Unter Daten versteht man im Allgemeinen: Angaben, Werte oder formulierbare Befunde, die durch Messung, Beobachtung u. a. gewonnen wurden.
 
 
 Typische Formate:
@@ -105,6 +105,8 @@ alles Textdateien!
 Herausgeber,Nummer,Deckung,Waehrung,Name,Vorname,maennlich,Hobby,Alter,Kind,Partner
 Xema,1234-5678-9012-3456,2e+6,EURO,Mustermann,Max,true,Reiten,42,0,0
 ```
+
+Im Alltag oft Probleme mit `,` oder `.` (Komma, Dezimalpunkt, Tausendertrennzeichen) Problematik!
 
 --
 
@@ -127,6 +129,8 @@ Xema,1234-5678-9012-3456,2e+6,EURO,Mustermann,Max,true,Reiten,42,0,0
   }
 }
 ```
+
+Bei komplexen Strukturen für den Menschen eher schwer zu lesen. Für den PC easy.
 
 --
 
@@ -153,6 +157,8 @@ Xema,1234-5678-9012-3456,2e+6,EURO,Mustermann,Max,true,Reiten,42,0,0
   </Inhaber>
 </Kreditkarte>
 ```
+
+Bei komplexen Strukturen für den Menschen eher schwer zu lesen. Für den PC easy.
 
 --
 
@@ -197,6 +203,56 @@ Antwort der API:
    "status" : "OK"
 }
 ```
+
+--
+
+### Beispiel: OpenStreetMaps.org
+
+Frage an die [Overpass API](http://overpass-turbo.eu/s/5rh):
+```
+<osm-script output="json" timeout="25">
+  <query type="way">
+    <has-kv k="leisure" v="park"/>
+    <bbox-query e="13.7618887424469" n="51.074113200087204" s="51.06796492266171" w="13.752104043960571"/>
+  </query>
+  <print mode="body"/>
+  <recurse type="down"/>
+  <print mode="skeleton" order="quadtile"/>
+</osm-script>
+```
+
+Antwort der API:
+```
+{
+  "version": 0.6,
+  "generator": "Overpass API",
+  "osm3s": {
+    "timestamp_osm_base": "2014-10-13T12:04:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 4383454,
+  "nodes": [
+    26750561,
+    2972329680,
+    369112324,
+    3013620425,
+	...
+	  ],
+  "tags": {
+    "alt_name": "Alaunpark",
+    "leisure": "park",
+    "name": "Alaunplatz",
+    "wheelchair": "yes",
+    "wikipedia": "de:Alaunplatz"
+  }
+},
+```
+
+oder als [GeoJSON](https://gist.github.com/anonymous/28244576babfd484e63f)
 
 --
 

@@ -21,8 +21,8 @@
 
 # <codecell>
 
-import pandas as pd
-import seaborn as sns
+import pandas as pd # um Daten zu handlen
+import seaborn as sns # damit die Diagramme schön aussehen und für statistische Sachen
 sns.set_style("whitegrid")
 
 # <headingcell level=2>
@@ -278,12 +278,6 @@ pkw='''Codes	Names	2005	2006	2007	2008	2009	2010	2011	2005	2006	2007	2008	2009	2
 98	Briesnitz	1013	1020	921	920	930	930	937	5,0	3,9	3,9	3,8	4,0	4,0	4	41,0	40,0	40,0	41,0	41,0	43,0	42,0	44,0	4,0	3,0	3,0	3,0	3,1	4,0	4,0	4,0	1,0	2,0	2,0	2,0	1,9	2,0	2,0	2,0	45,8	45,7	44,7	41,6	35,0	34,0	78,0	20,3	22,6	22,4	22,1	21,6	21,8	23,15	
 99	Altfranken/Gompitz	1392	1414	1279	1293	1297	1295	1300	0,0	2,4	4,8	4,8	5,0	5,0	5	43,0	44,0	44,0	49,0	49,0	47,0	45,0	48,0	5,0	4,0	5,0	5,0	4,3	4,0	4,0	4,0	1,0	3,0	3,0	3,0	2,7	2,0	3,0	3,0	52,1	54,4	65,9	61,6	53,0	51,0	52,0	20,2	20,6	19,6	21,0	21,8	21,8	23,25	'''
 
-# <markdowncell>
-
-# Wir haben ja die Funktion noch, können sie also noch mal verwenden.
-# 
-# ![](WhenToWriteAnAlgorithm.png)
-
 # <codecell>
 
 years, pkw = text2dataframe(pkw)
@@ -319,14 +313,16 @@ pkwbestand2011 = pkwbestand2011.T # Transponieren, weil wir jetzt Stadtteile als
 
 pkwbestand2011.columns = ['Bestand'] # Umbenennen
 pkwbestand2011.sort('Bestand', ascending=False, inplace=True) # Sortieren
-pkwbestand2011.plot(kind='barh', figsize=(7,12)) # Darstellen
+
+fig, ax = plt.subplots(subplot_kw=dict(axisbg='#EEEEEE'))
+pkwbestand2011.plot(kind='barh', figsize=(7,12), ax=ax) # Darstellen
 
 plt.ylabel('Stadtteil')
 plt.title('PKW in Dresden (2011)')
 plt.tight_layout()
 plt.savefig('PKW Bestand 2011.png', dpi=150)
 
-# <headingcell level=3>
+# <headingcell level=2>
 
 # Korrelation mit Fahrzeit zum Stadtzentrum
 
@@ -343,6 +339,10 @@ import requests # Python Bibliothek für Anfragen an API's oder andere Webseiten
 # <markdowncell>
 
 # Jetzt schreiben wir uns eine Funktion, die die Fahrzeit zurück gibt.
+
+# <markdowncell>
+
+# ![](Should-I-write-an-Algorithm.png)
 
 # <codecell>
 
@@ -402,11 +402,14 @@ pkwbestand2011.head(10)
 
 # <markdowncell>
 
-# Schauen wir doch mal, ob es einen Zusammenhang zwischen der Fahrzeit zum Stadtzentrum und dem PKW Bestand in dem Stadtteil gibt
+# Schauen wir doch mal, ob es einen Zusammenhang zwischen der Fahrzeit zum Stadtzentrum und dem PKW Bestand in dem Stadtteil gibt. Um das Erstellen der Korrelation zu vereinfachen, nutzen wir [Seaborn](http://web.stanford.edu/~mwaskom/software/seaborn/introduction.html):
+# 
+# * Seaborn is a library for making attractive and informative statistical graphics in Python. It is built on top of matplotlib and tightly integrated with the PyData stack, including support for numpy and pandas data structures and statistical routines from scipy and statsmodels.
 
 # <codecell>
 
-grafik = sns.lmplot("Fahrzeit", "Bestand", data=pkwbestand2011, scatter_kws={"s": 50, "alpha": 0.8}, palette="Greens_d")
+grafik = sns.lmplot("Fahrzeit", "Bestand", data=pkwbestand2011, scatter_kws={"s": 50, "alpha": 0.8}, size=6)
+
 grafik.set_titles('Test')
 grafik.set_xlabels('Fahrzeit mit PKW bis zum Stadtzentrum Dresden (in min)')
 grafik.set_ylabels('PKW Bestand im Stadtteil')

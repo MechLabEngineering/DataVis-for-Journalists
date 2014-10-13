@@ -205,28 +205,51 @@ plt.savefig('Einwohner-Scatter.png', dpi=150)
 # <codecell>
 
 fig, ax = plt.subplots(subplot_kw=dict(axisbg='#EEEEEE'))
-N = 100
 
-scatter = ax.scatter(df['Fläche in km²'],
-                     df['Einwohnerzahl'],
-                     alpha=0.8,
-                     s=100,
-                     c=df['Einwohnerzahl']/df['Fläche in km²'],
-                     cmap=plt.cm.winter_r)
+scatter = ax.scatter(df['Fläche in km²'], # auf der X-Achse
+                     df['Einwohnerzahl'], # auf der Y-Achse
+                     alpha=0.8, # Transparenz
+                     s=100, # Größe der Kugeln
+                     c=df['Einwohnerzahl']/df['Fläche in km²'], # Farbe nach Einwohnerdichte
+                     cmap=plt.cm.winter_r) # Colormap: Winter
 ax.grid(color='white', linestyle='solid')
 
-ax.set_title("Einwohnerdichte Dresdner Stadtteile", size=20)
-ax.set_xlabel(u'Fläche in km²')
-ax.set_ylabel(u'Einwohnerzahl')
+ax.set_title("Einwohnerdichte Dresdner Stadtteile", size=20) # Titel
+ax.set_xlabel(u'Fläche in km²') # X-Beschriftung
+ax.set_ylabel(u'Einwohnerzahl') # Y-Beschriftung
 
+# Jetzt noch ein Mouse-Over Effekt hinzufügen mit den Stadtteilnamen als Labels
 tooltip = mpld3.plugins.PointLabelTooltip(scatter, labels=df.index.tolist())
 mpld3.plugins.connect(fig, tooltip)
 
+# .html Datei mit allen Infos speichern
 mpld3.save_html(fig, 'Einwohner-Scatter.html')
 
+# und hier anzeigen
 mpld3.display()
 
 # <markdowncell>
 
+# Und in dieser .html ist jetzt ein Teil JavaScript:
+# 
+# ```
+# <script>
+# ...
+# </script>
+# ```
+# 
+# und ein Teil HTML:
+# 
+# ```
+# <div ...
+# ```
+# 
+# Einfach alles in die Webseite einfügen. Das `<div>` wird vom JavaScript durch die Grafik ersetzt.
+
+# <markdowncell>
+
 # ![](http://triadstrategies.typepad.com/.a/6a0120a6abf659970b0162fde3889c970d-pi)
+
+# <codecell>
+
 

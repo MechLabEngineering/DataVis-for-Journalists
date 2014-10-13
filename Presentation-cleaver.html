@@ -777,14 +777,14 @@ code {
 
   </section>
   <section>
-    <h2 id="wie-bekomme-ich-das-auf-meinem-pc-mac-zum-laufen-">Wie bekomme ich das auf meinem PC/Mac zum laufen?</h2>
+    <h3 id="wie-bekomme-ich-das-auf-meinem-pc-mac-zum-laufen-">Wie bekomme ich das auf meinem PC/Mac zum laufen?</h3>
 <p><img src="http://www.troll.me/images/victory-baby/you-can-do-it-just-try.jpg" alt=""></p>
 
   </section>
   <section>
     <h2 id="daten-was-ist-das-">Daten, was ist das?</h2>
 <p><code>11110001001000000</code></p>
-<p>Unter Daten versteht man im Allgemeinen Angaben, Werte oder formulierbare Befunde, die durch Messung, Beobachtung u. a. gewonnen wurden.</p>
+<p>Unter Daten versteht man im Allgemeinen: Angaben, Werte oder formulierbare Befunde, die durch Messung, Beobachtung u. a. gewonnen wurden.</p>
 <p>Typische Formate:</p>
 <ul>
 <li>CSV (Comma Seperated Value Datei)</li>
@@ -798,6 +798,7 @@ code {
     <h3 id="beispiel-csv-auch-excel-">Beispiel: CSV (auch Excel)</h3>
 <pre><code>Herausgeber,Nummer,Deckung,Waehrung,Name,Vorname,maennlich,Hobby,Alter,Kind,Partner
 Xema,1234-5678-9012-3456,2e+6,EURO,Mustermann,Max,true,Reiten,42,0,0</code></pre>
+<p>Im Alltag oft Probleme mit <code>,</code> oder <code>.</code> (Komma, Dezimalpunkt, Tausendertrennzeichen) Problematik!</p>
 
   </section>
   <section>
@@ -817,6 +818,7 @@ Xema,1234-5678-9012-3456,2e+6,EURO,Mustermann,Max,true,Reiten,42,0,0</code></pre
     &quot;Partner&quot;: null
   }
 }</code></pre>
+<p>Bei komplexen Strukturen für den Menschen eher schwer zu lesen. Für den PC easy.</p>
 
   </section>
   <section>
@@ -840,6 +842,7 @@ Xema,1234-5678-9012-3456,2e+6,EURO,Mustermann,Max,true,Reiten,42,0,0</code></pre
     &lt;Kinder /&gt;
   &lt;/Inhaber&gt;
 &lt;/Kreditkarte&gt;</code></pre>
+<p>Bei komplexen Strukturen für den Menschen eher schwer zu lesen. Für den PC easy.</p>
 
   </section>
   <section>
@@ -878,6 +881,49 @@ Xema,1234-5678-9012-3456,2e+6,EURO,Mustermann,Max,true,Reiten,42,0,0</code></pre
    ],
    &quot;status&quot; : &quot;OK&quot;
 }</code></pre>
+
+  </section>
+  <section>
+    <h3 id="beispiel-openstreetmaps-org">Beispiel: OpenStreetMaps.org</h3>
+<p>Frage an die <a href="http://overpass-turbo.eu/s/5rh">Overpass API</a>:</p>
+<pre><code>&lt;osm-script output=&quot;json&quot; timeout=&quot;25&quot;&gt;
+  &lt;query type=&quot;way&quot;&gt;
+    &lt;has-kv k=&quot;leisure&quot; v=&quot;park&quot;/&gt;
+    &lt;bbox-query e=&quot;13.7618887424469&quot; n=&quot;51.074113200087204&quot; s=&quot;51.06796492266171&quot; w=&quot;13.752104043960571&quot;/&gt;
+  &lt;/query&gt;
+  &lt;print mode=&quot;body&quot;/&gt;
+  &lt;recurse type=&quot;down&quot;/&gt;
+  &lt;print mode=&quot;skeleton&quot; order=&quot;quadtile&quot;/&gt;
+&lt;/osm-script&gt;</code></pre>
+<p>Antwort der API:</p>
+<pre><code>{
+  &quot;version&quot;: 0.6,
+  &quot;generator&quot;: &quot;Overpass API&quot;,
+  &quot;osm3s&quot;: {
+    &quot;timestamp_osm_base&quot;: &quot;2014-10-13T12:04:02Z&quot;,
+    &quot;copyright&quot;: &quot;The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.&quot;
+  },
+  &quot;elements&quot;: [
+
+{
+  &quot;type&quot;: &quot;way&quot;,
+  &quot;id&quot;: 4383454,
+  &quot;nodes&quot;: [
+    26750561,
+    2972329680,
+    369112324,
+    3013620425,
+    ...
+      ],
+  &quot;tags&quot;: {
+    &quot;alt_name&quot;: &quot;Alaunpark&quot;,
+    &quot;leisure&quot;: &quot;park&quot;,
+    &quot;name&quot;: &quot;Alaunplatz&quot;,
+    &quot;wheelchair&quot;: &quot;yes&quot;,
+    &quot;wikipedia&quot;: &quot;de:Alaunplatz&quot;
+  }
+},</code></pre>
+<p>oder als <a href="https://gist.github.com/anonymous/28244576babfd484e63f">GeoJSON</a></p>
 
   </section>
   <section>
