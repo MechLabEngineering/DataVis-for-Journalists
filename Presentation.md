@@ -4,7 +4,7 @@ author:
   name: Paul Balzer
   twitter: balzer82
   url: http://codefor.de/dresden
-  output: Presentation.html
+output: Presentation-CodeWeek-DataVis-Journalists.html
 controls: true
 
 --
@@ -12,7 +12,7 @@ controls: true
 ![](http://blog.slub-dresden.de/uploads/RTEmagicC_codeweek-slider.png.png)
 
 # Datenvisualisierung für Journalisten
-## und Blogger und für dich!
+## und Blogger und weil es fetzt!
 
 ~ Paul Balzer ~
 
@@ -26,6 +26,29 @@ The Power of Visual Communication Infographic via [Wyzowl](https://www.wyzowl.co
 
 --
 
+## Was ist Datenjournalismus?
+
+Datenjournalismus (englisch data driven journalism, DDJ) ist eine Form des Online-Journalismus.
+
+Gemäß der Open-Data-Idee bedeutet Datenjournalismus nicht nur die Recherche in Datenbanken, sondern die Sammlung, Aufbereitung, Analyse und Publikation öffentlich zugänglicher Informationen sowie ihre Verarbeitung in klassischen journalistischen Darstellungsformen.
+
+[Quelle: Wikipedia](http://de.wikipedia.org/wiki/Datenjournalismus)
+
+--
+
+## Datenjournalismus-Portale
+
+* [Data Store](http://www.theguardian.com/data) und [Datablog](http://www.guardian.co.uk/news/datablog) von The Guardian
+* [Data Desk](http://projects.latimes.com/index/) von The Los Angeles Times
+* [Data Blog](http://blog.zeit.de/open-data/) bei Die Zeit
+* [Datadrivenjournalism.net](http://datadrivenjournalism.net/). Website zur Konferenz Data Driven Journalism
+* [Data Journalism Handbook](http://datajournalismhandbook.org/1.0/en/) der Open Knowledge Foundation
+* [Datenjournalismus und Visualisierung mit Open Source Software](http://www.mandalka.name/visualisierung)
+* ...
+
+
+
+--
 
 ## Roadmap heute
 
@@ -46,8 +69,7 @@ The Power of Visual Communication Infographic via [Wyzowl](https://www.wyzowl.co
 
 ![Why?](http://www.timelinecoverbanner.com/cliparts/wp-content/digital-scrapbooking/neutral-whyyyyy.png)
 
-Es gibt [unendlich viele Tools](http://selection.datavisualization.ch/), die eingesetzt werden können. Wir beschränken uns auf eine gaaaanz kleine Auswahl!
-
+Es gibt [unendlich viele Tools](http://www.mandalka.name/visualisierung/), die eingesetzt werden können. Wir beschränken uns auf eine gaaaanz kleine Auswahl!
 
 * Python 2.7 mit Zusatzpaketen:
 * Pandas (zum Datenhandling)
@@ -57,6 +79,8 @@ Es gibt [unendlich viele Tools](http://selection.datavisualization.ch/), die ein
 
 
 Mehr: http://selection.datavisualization.ch/
+
+Mehr: http://www.mandalka.name/visualisierung/
 
 --
 
@@ -169,6 +193,7 @@ API (englisch application programming interface, wortwörtlich ‚Anwendungs­pr
 * Frontend: Google Maps mit Routenplanung
 * API dazu: [Google Distance Matrix API](https://developers.google.com/maps/documentation/distancematrix/?hl=de)
 
+
 --
 
 ### Beispiel: Google Distance Matrix API
@@ -266,7 +291,8 @@ oder als [GeoJSON](https://gist.github.com/anonymous/28244576babfd484e63f)
 
 * Wikipedia
 * OpenStreetMaps
-* APIs
+* APIs ([API Verzeichnis](http://www.programmableweb.com/apis/directory))
+* Scrapen
 * ...
 
 http://blog.visual.ly/data-sources/
@@ -280,3 +306,18 @@ http://blog.visual.ly/data-sources/
 # Fangen wir an!
 
 ![Meme](http://i1.kym-cdn.com/photos/images/newsfeed/000/415/209/3b4.png)
+
+--
+
+"Wir sehen im Thema Datenjournalismus einen ganz wichtigen Baustein in den Darstellungsformen, die uns zur Verfügung stehen – keine Mode-Erscheinung.
+Diese Skills werden wir durch immer wieder neue Projekte ausbauen und anwenden."
+
+Sascha Venohr, Entwicklungsredakteur bei Zeit Online, über die Datenjournalismus-Strategie seiner Redaktion. [Quelle](http://www.mediummagazin.de/magazin-plus/thema-datenjournalismus-das-beispiel-zeit-online/)
+
+--
+
+## Weiter
+
+[Programmier Crashkurs für Journalisten](http://www.digitalerwandel.de/2012/07/16/programmier-crashkurs-fuer-journalisten/) - Digitaler Wandel
+
+[Visualisierungshilfen für den Datenjournalismus](http://edoc.sub.uni-hamburg.de/haw/volltexte/2014/2416/pdf/bachelorarbeit_alexander_salenko.pdf) - Bachelorarbeit von Alexander Salenko
