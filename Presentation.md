@@ -6,6 +6,7 @@ author:
   url: http://codefor.de/dresden
 output: Presentation-CodeWeek-DataVis-Journalists.html
 controls: true
+style: Presentation.css
 
 --
 
@@ -281,7 +282,7 @@ oder als [GeoJSON](https://gist.github.com/anonymous/28244576babfd484e63f)
 
 --
 
-![Matrix](http://i.huffpost.com/gen/799955/thumbs/o-THE-MATRIX-AND-HINDUISM-facebook.jpg)
+Do you see it?
 
 -- 
 
