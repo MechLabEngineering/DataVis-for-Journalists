@@ -6,7 +6,6 @@ author:
   url: http://codefor.de/dresden
 output: Presentation-CodeWeek-DataVis-Journalists.html
 controls: true
-style: Presentation.css
 
 --
 
@@ -24,6 +23,12 @@ style: Presentation.css
 ![](http://mechlab-engineering.de/wordpress/wp-content/uploads/2014/10/visuelle-kommunikation-ausschnitt-595x484.jpg)
 
 The Power of Visual Communication Infographic via [Wyzowl](https://www.wyzowl.com/blog/power-visual-communication-infographic/)
+
+--
+
+## Warum visualisieren?
+
+![Infographic by- GO Gulf Web Design Dubai Company](http://www.go-gulf.ae/wp-content/uploads/2014/07/what-people-share-social-networks.jpg)
 
 --
 
@@ -51,7 +56,7 @@ Gemäß der Open-Data-Idee bedeutet Datenjournalismus nicht nur die Recherche in
 
 --
 
-## Roadmap heute
+# Roadmap heute
 
 * Welche Tools brauche ich?
 * Wie bekomme ich das auf meinem PC/Mac zum laufen?
@@ -79,9 +84,9 @@ Es gibt [unendlich viele Tools](http://www.mandalka.name/visualisierung/), die e
 * mpld3 (für interaktive Onlinegrafiken)
 
 
-Mehr: http://selection.datavisualization.ch/
-
-Mehr: http://www.mandalka.name/visualisierung/
+mehr Auswahl:
+* http://selection.datavisualization.ch/
+* http://www.mandalka.name/visualisierung/
 
 --
 
@@ -106,7 +111,7 @@ und den Paketmanager PIP:
 
 --
 
-## Daten, was ist das?
+# Daten, was ist das?
 
 `11110001001000000`
 
@@ -282,7 +287,7 @@ oder als [GeoJSON](https://gist.github.com/anonymous/28244576babfd484e63f)
 
 --
 
-Do you see it?
+![Matrix](http://i.huffpost.com/gen/799955/thumbs/o-THE-MATRIX-AND-HINDUISM-facebook.jpg)
 
 -- 
 
