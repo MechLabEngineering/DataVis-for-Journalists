@@ -73,7 +73,7 @@ Gemäß der Open-Data-Idee bedeutet Datenjournalismus nicht nur die Recherche in
 
 ## Welche Tools brauche ich?
 
-![Why?](http://www.timelinecoverbanner.com/cliparts/wp-content/digital-scrapbooking/neutral-whyyyyy.png)
+![Why?](http://cdn.meme.am/images/300x/1125615.jpg)
 
 Es gibt [unendlich viele Tools](http://www.mandalka.name/visualisierung/), die eingesetzt werden können. Wir beschränken uns auf eine gaaaanz kleine Auswahl!
 
