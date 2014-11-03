@@ -9,7 +9,7 @@ CodeWeekEU Workshop 'Datenvisualisierung für Journalisten'
 
 ## Präsentation
 
-[Präsentation anschauen](mechlab-academy.de/Workshops/Presentation-CodeWeek-DataVis-Journalists.html)
+[Präsentation anschauen](http://mechlab-academy.de/Workshops/Presentation-CodeWeek-DataVis-Journalists.html)
 
 ## Code
 
